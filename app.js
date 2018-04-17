@@ -1,18 +1,15 @@
+console.log("landon rocks")
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 var app = express();
-
+console.log("failure")
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
