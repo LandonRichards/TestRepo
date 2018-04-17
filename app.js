@@ -5,8 +5,8 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-var book = require('./routes/book');
-var auth = require('./routes/auth');
+// var book = require('./routes/book');
+// var auth = require('./routes/auth');
 var app = express();
 // mongoose.connect(process.env.MONGODB_URI|| 'mongodb://localhost/mern-secure', { promiseLibrary: mongoose.Promise })
 //   .then(() =>  console.log('connection succesful'))
