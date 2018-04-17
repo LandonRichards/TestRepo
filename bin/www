@@ -3,9 +3,9 @@
 /**
  * Module dependencies.
  */
-
+console.log("hi nick")
 var app = require('../app');
-var debug = require('debug')('mean-app:server');
+var debug = require('debug')('sure:server');
 var http = require('http');
 
 /**
