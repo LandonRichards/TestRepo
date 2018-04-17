@@ -8,16 +8,16 @@ mongoose.Promise = require('bluebird');
 var book = require('./routes/book');
 var auth = require('./routes/auth');
 var app = express();
-mongoose.connect(process.env.MONGODB_URI|| 'mongodb://localhost/mern-secure', { promiseLibrary: mongoose.Promise })
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+// mongoose.connect(process.env.MONGODB_URI|| 'mongodb://localhost/mern-secure', { promiseLibrary: mongoose.Promise })
+//   .then(() =>  console.log('connection succesful'))
+//   .catch((err) => console.error(err));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.use('/api/book', book);
-app.use('/api/auth', auth);
+// app.use('/api/book', book);
+// app.use('/api/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

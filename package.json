@@ -1,5 +1,5 @@
 {
-  "name": "mern-secure",
+  "name": "sure",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,9 +24,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "postinstall": "npm run build"
+    "postinstall": "yarn build"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0"
-  }
+  },
+  "main": "www",
+  "repository": "https://github.com/LandonRichards/TestRepo.git",
+  "author": "Landon <landonchristopherrichards@gmail.com>",
+  "license": "MIT"
 }
