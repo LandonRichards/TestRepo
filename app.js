@@ -5,16 +5,11 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/mern-crud', { useMongoClient: true, promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
-var book = require('./routes/book');
-var auth = require('./routes/auth');
 var app = express();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
