@@ -1,5 +1,157 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("./images/fantAsia3.jpg");
+    background-size: 2400px, 2400px;
+
+}
+
+#upvote {
+    background-image: url("./images/wednesday.png");
+    background-size: 50px, 50px;
+}
+#downvote {
+    background-image: url("./images/tuesday.png");
+    background-size: 50px, 50px;
+}
+#TonberryLogo {
+    height: 17%;
+    width: 77.18%;
+    margin-left: 55px;
+    margin-top: 57px;
+    margin-bottom: 50px;
+}
+.form-signin-heading {
+	color: white;
+	text-shadow: 2px 2px #876136;
+	font-family: 'Rock Salt', cursive;
+}
+
+#footer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 35px;
+    
+}
+
+img.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.icon:hover {
+    -webkit-transform: scale(1.2);
+}
+
+#menu {
+    margin-top: 40px;
+}
+a {
+    color: #d85b1c;
+    font-size: 2em;
+}
+/* Position and sizing of burger button */
+
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+
+/* Color/shape of burger icon bars */
+
+.bm-burger-bars {
+    background: #d85b1c;
+}
+
+
+/* Position and sizing of clickable cross button */
+
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+
+/* Color/shape of close button cross */
+
+.bm-cross {
+    background: #bdc3c7;
+}
+
+
+/* General sidebar styles */
+
+.bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+}
+
+
+/* Morph shape necessary with bubble or elastic */
+
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+
+/* Wrapper for item list */
+
+.bm-item-list {
+    color: white;
+    padding: 0.8em;
+}
+
+
+/* Styling of overlay */
+
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+a {
+    font-family: 'Changa', sans-serif;
+}
+
+#enemyCreator {
+    font-size: 1em;
+}
+
+/*Key Element*/
+#key {
+    text-align: center;
+    width: 100%;
+    color: white;
+    background-color: rgba(54, 54, 54, 0.8);
+    padding: 20px;
+    border-radius: 2px;
+    text-align: center;
+    margin-bottom: 50px;
+   
+}
+#keyTitle {
+    /*padding-left: 20px;
+    font-family: 'Zilla Slab Highlight', cursive;*/
+}
+#keyValues {
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+    list-style: none;
+    font-family: 'Bree Serif', serif;
+    font-size: 1.5em;
+}
+
+span {
+    font-weight: bolder;
+}
+
+/*Making it more mobile-friendly*/
+input {
+    min-height: 50px;
 }
