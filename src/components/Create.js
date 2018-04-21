@@ -8,12 +8,10 @@ class Create extends Component {
   constructor() {
     super();
     this.state = {
-      isbn: '',
-      title: '',
-      author: '',
-      description: '',
-      published_year: '',
-      publisher: ''
+      origin: '',
+      name: '',
+      difficulty: '',
+      guide: ''
     };
   }
   onChange = (e) => {
@@ -25,50 +23,47 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { isbn, title, author, description, published_year, publisher } = this.state;
+    const { origin, name, difficulty, guide} = this.state;
 
-    axios.post('/api/book', { isbn, title, author, description, published_year, publisher })
+    axios.post('/api/book', { origin, name, difficulty, guide})
       .then((result) => {
         this.props.history.push("/")
       });
   }
 
   render() {
-    const { isbn, title, author, description, published_year, publisher } = this.state;
+    const { origin, name, difficulty, guide } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              Add a new guide for other users!
+              Tonberry Create
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Tonberry List</Link></h4>
+            <h4 id="enemyCreator"><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Enemy Creator</Link></h4>
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
-                <label for="isbn">Game Name:</label>
-                <input type="text" class="form-control" name="isbn" value={isbn} onChange={this.onChange} placeholder="Game Name" />
+                <label for="origin">Origin of Enemy:</label>
+                <input type="text" class="form-control" name="origin" value={origin} onChange={this.onChange} placeholder="Origin" />
               </div>
               <div class="form-group">
-                <label for="title">Title of the Boss:</label>
-                <input type="text" class="form-control" name="title" value={title} onChange={this.onChange} placeholder="Title" />
+                <label for="name">Name of Enemy:</label>
+                <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
               </div>
               <div class="form-group">
-                <label for="author">Author:</label>
-                <input type="text" class="form-control" name="author" value={author} onChange={this.onChange} placeholder="Author" />
+              <label class="addPage" for="difficulty">Rate the Difficulty of the Enemy:</label>
+              <select class="form-control" id="difficulty">
+                <option value="Adds">Adds</option>
+                <option value="Mini-boss">Mini-boss</option>
+                <option value="Mid-boss">Mid-boss</option>
+                <option value="Final Boss">Final Boss</option>
+              </select>
               </div>
               <div class="form-group">
-                <label for="description">Description:</label>
-                <textArea class="form-control" name="description" onChange={this.onChange} placeholder="Description" cols="80" rows="3">{description}</textArea>
-              </div>
-              <div class="form-group">
-                <label for="published_date">Balance Patch:</label>
-                <input type="number" class="form-control" name="published_year" value={published_year} onChange={this.onChange} placeholder="Use only if applicable" />
-              </div>
-              <div class="form-group">
-                <label for="publisher">Enter Your Guide here!</label>
-                <input type="text" class="form-control" name="publisher" value={publisher} onChange={this.onChange} placeholder="Placeholder" />
+                <label for="guide">Guide:</label>
+                <textArea class="form-control" name="guide" onChange={this.onChange} placeholder="Guide to success" cols="80" rows="3">{guide}</textArea>
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>

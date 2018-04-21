@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Book = require('../models/Book.js');
+var Enemy = require('../models/Book.js');
 var passport = require('passport');
 require('../config/passport')(passport);
 
@@ -9,28 +9,28 @@ require('../config/passport')(passport);
 router.get('/', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
-    Book.find(function (err, books) {
+    Enemy.find(function (err, Enemys) {
       if (err) return next(err);
-      res.json(books);
+      res.json(Enemys);
     });
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
   }
 });
 
-/* GET SINGLE BOOK BY ID */
+/* GET SINGLE Enemy BY ID */
 router.get('/:id', function(req, res, next) {
-  Book.findById(req.params.id, function (err, post) {
+  Enemy.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* SAVE BOOK */
+/* SAVE Enemy */
 router.post('/', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
-    Book.create(req.body, function (err, post) {
+    Enemy.create(req.body, function (err, post) {
       if (err) return next(err);
       res.json(post);
     });
@@ -39,17 +39,17 @@ router.post('/', passport.authenticate('jwt', { session: false}), function(req, 
   }
 });
 
-/* DELETE BOOK */
+/* DELETE Enemy */
 router.delete('/:id', function(req, res, next) {
-  Book.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+  Enemy.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* UPDATE BOOK */
+/* UPDATE Enemy */
 router.put('/:id', function(req, res, next) {
-  Book.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  Enemy.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
